@@ -1,16 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href= "style.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Productivity Dashboard</title>
 </head>
+
 <body>
-    <div class="box">
-    <img src="./WebCollage_angryedit.webp" alt="">
-    <h1>The Cult</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+    <div id="mouse-glow"></div>
+    <audio id="theme-audio" src="theme-change.mp3" preload="auto"></audio>
+    <div id="main">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle Theme">
+            <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
+
+        <section class="allElems">
+            <!-- front page -->
+
+            <div class="header">
+                <div class="weather-animations">
+                    <div class="stars"></div>
+                    <div class="clouds"></div>
+                    <div class="rays"></div>
+                    <div class="leaves"></div>
+                </div>
+                <div class="header-content">
+                    <div class="header1">
+                        <h2>21 June 2026</h2>
+                        <h1 class="time-text">Saturday</h1>
+                        <h4>Jaipur (RJ)</h4>
+                    </div>
+                    <div class="header2">
+                        <div class="weather-main">
+                            <div class="weather-icon-wrapper">
+                                <img src="" alt="weather icon" class="weather-icon" style="display: none;">
+                            </div>
+                            <h2 class="temp-text">20°C</h2>
+                        </div>
+                        <div class="weather-details">
+                            <h3 class="feels-like">Feels Like: 22°C</h3>
+                            <h3 class="humidity">Humidity: 60%</h3>
+                            <h3 class="wind">Wind: 10km/h</h3>
+                            <h3 class="uv-index">UV: 5</h3>
+                        </div>
+                        <h4 class="cloud-text">overcast clouds</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="allFeatures">
+                <div class="todo elem" id="0">
+                <img src="https://plus.unsplash.com/premium_photo-1666739087569-eec71efac750?q=80&w=1038&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <h2>To Do List</h2>
+            </div>
+
+
+            <div class="Daily elem" id="1">
+                <img src="https://images.unsplash.com/photo-1653070863221-6b700d26884d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <h2>Daily Planner</h2>
+            </div>
+            <div class="Motivation elem" id="2">
+                <img src="https://plus.unsplash.com/premium_vector-1770811628841-2591db724237?q=80&w=3272&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <h2>Motivation</h2>
+            </div>
+            <div class="pomodoro elem" id="3">
+                <img src="https://images.unsplash.com/photo-1635181951397-ffca503f9e6d?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <h2>Pomodoro Timer</h2>
+            </div>
+            <div class="Goals elem" id="4">
+                <img src="https://plus.unsplash.com/premium_photo-1684356819140-e82e7446b600?q=80&w=1384&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="">
+                <h2>Daily Goals</h2>
+            </div>
+            </div>
+
+        </section>
+        <!-- To DO List -->
+        <section class="fullElem todo-list-fullpage">
+            <button class="back" id="0">
+                Close
+            </button>
+            <h2>Personalised Task List</h2>
+            <div class="todo-container">
+                <!-- Left Corner of todo list -->
+                <div class="addtask">
+                    <form>
+                        <input type="text" placeholder="Enter your task">
+                        <textarea name="text" placeholder="Enter Description"></textarea>
+                        <div class="mark-imp">
+                            <input type="checkbox" id="check">
+                            <label for="check"> Mark as Important</label>
+
+                        </div>
+                        <button>Add Task</button>
+                    </form>
+
+                </div>
+                <!-- Right Corner Of To Do List  -->
+                <div class="alltask">
+
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Daily Planner -->
+        <section class="fullElem daily-planner-fullpage">
+            <button class="back" id="1">
+                Close
+            </button>
+
+            <h1>Plan Your Day TO Be More Productive</h1>
+
+            <div class="day-planner ">
+
+
+
+            </div>
+
+        </section>
+
+        <!-- Motivation -->
+        <section class="fullElem motivation-fullpage">
+            <button class="back" id="2">
+                Close
+            </button>
+            <h1>Motivation</h1>
+            <div class="motivation-container">
+                <div class="motivation-wrapper">
+                    <div class="motivation1">
+                        <h1>Motivation Of Day</h1>
+                    </div>
+                    <div class="motivation2">
+                        <p></p>
+                    </div>
+                    <div class="motivation3">
+                        <h1></h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pomodoro Timer -->
+        <section class="fullElem pomodoro-fullpage">
+            <button class="back" id="3">
+                Close
+            </button>
+            <h1>Set Your Study Timer!</h1>
+            <div class="session">Work Session</div>
+            <div class="pomo-timer">
+                <h1>25:00</h1>
+                <button class="start-timer">Start</button>
+                <button class="pause-timer">Pause</button>
+                <button class="reset-timer">Reset</button>
+            </div>
+        </section>
+
+        <!-- Daily Goals -->
+        <section class="fullElem daily-goals-fullpage">
+            <button class="back" id="4">
+                Close
+            </button>
+            <h2>Daily Goals</h2>
+            <div class="goals-container">
+                <!-- Left Corner of goals list -->
+                <div class="addgoal">
+                    <form>
+                        <input type="text" placeholder="Enter your daily goal">
+                        <button>Add Goal</button>
+                    </form>
+                </div>
+                <!-- Right Corner Of Goals List  -->
+                <div class="allgoals">
+
+                </div>
+            </div>
+        </section>
+        <script src="script.js" defer></script>
     </div>
 </body>
+
 </html>
