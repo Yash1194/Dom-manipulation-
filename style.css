@@ -119,6 +119,7 @@ html, body {
     justify-content: space-evenly;
     gap: 40px;
 }
+
 .allElems .header{
     height: 370px;
     width: 100%;
